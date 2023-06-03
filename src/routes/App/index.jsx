@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route, useRoutes } from 'react-router-dom';
 
+import AppContext from '../../context/AppContext';
+import useInitialState from '../../hooks/useInitialState';
+
 import Home from '../../containers/Home';
 import Checkout from '../../containers/Checkout';
 import Information from '../../containers/Information';
@@ -24,12 +27,15 @@ const AppRoutes = () => {
 }
 
 const App = () => {
+  const initialState = useInitialState();
   return (
-    <BrowserRouter>
-      <Layout>
-        <AppRoutes />
-      </Layout>
-    </BrowserRouter>
+    <AppContext.Provider value={initialState}>
+      <BrowserRouter>
+        <Layout>
+          <AppRoutes />
+        </Layout>
+      </BrowserRouter>
+    </AppContext.Provider>
     )
 };
 
