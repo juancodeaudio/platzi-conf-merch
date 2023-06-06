@@ -1,5 +1,5 @@
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"
-
+const API = ''
 const Map = ({data}) => {
 
   const mapStyles = {
@@ -17,7 +17,7 @@ const Map = ({data}) => {
   // }
 
   return (
-    <LoadScript googleMapsApiKey='AIzaSyCsuNdDLXydVywbO6faDIYDEEOX4r9dhxk'>
+    <LoadScript googleMapsApiKey={API}>
       <GoogleMap
         mapContainerStyle={mapStyles}
         zoom={14}
