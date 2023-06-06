@@ -22,6 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/eslint-parser": "^7.21.8",
+    "@paypal/react-paypal-js": "^7.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2"
@@ -30,6 +31,8 @@
     "@babel/core": "^7.22.1",
     "@babel/preset-env": "^7.22.4",
     "@babel/preset-react": "^7.22.3",
+    "@react-google-maps/api": "^2.18.1",
+    "axios": "^1.4.0",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.8.1",
     "eslint": "^8.41.0",
