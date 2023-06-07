@@ -1,8 +1,8 @@
 import {useContext } from "react";
 import { PayPalScriptProvider, PayPalButtons } from"@paypal/react-paypal-js";
-import AppContext from "../context/AppContext";
+import AppContext from "@context/AppContext";
 import { useNavigate } from'react-router-dom';
-import'../styles/components/Payment.scss';
+import'@styles/components/Payment.scss';
 
 const Payment =()=>{
 //ustedes usen su forma de manejar los estados, yo no lo estoy haciendo como el profe.

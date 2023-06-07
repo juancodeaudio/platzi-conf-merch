@@ -1,7 +1,7 @@
 import { useContext } from 'react'
-import AppContext from '../context/AppContext'
+import AppContext from '@context/AppContext'
 import { Link } from 'react-router-dom'
-import '../styles/components/Checkout.scss'
+import '@styles/components/Checkout.scss'
 
 const Checkout = () => {
   const { state: { cart }, removeFromCart } = useContext(AppContext)

@@ -1,7 +1,7 @@
 import { useRef, useContext } from 'react'
-import AppContext from '../context/AppContext'
+import AppContext from '@context/AppContext'
 import { Link, useNavigate } from 'react-router-dom'
-import '../styles/components/Information.scss'
+import '@styles/components/Information.scss'
 
 const Information = () => {
   const {state: {cart}, addToBuyer} = useContext(AppContext);

@@ -1,8 +1,8 @@
 import { useContext } from 'react'
-import AppContext from '../context/AppContext'
-import Map from '../components/Map'
-import useGoogleAddress from '../hooks/useGoogleAddress'
-import '../styles/components/Success.scss'
+import AppContext from '@context/AppContext'
+import Map from '@components/Map'
+import useGoogleAddress from '@hooks/useGoogleAddress'
+import '@styles/components/Success.scss'
 
 const Success = () => {
   const {state: {buyer}} = useContext(AppContext)

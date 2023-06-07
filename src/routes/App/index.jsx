@@ -1,17 +1,17 @@
-import { BrowserRouter, Routes, Route, useRoutes } from 'react-router-dom';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
 
-import AppContext from '../../context/AppContext';
-import useInitialState from '../../hooks/useInitialState';
+import AppContext from '@context/AppContext';
+import useInitialState from '@hooks/useInitialState';
 
-import Home from '../../containers/Home';
-import Checkout from '../../containers/Checkout';
-import Information from '../../containers/Information';
-import Payment from '../../containers/Payment';
-import Success from '../../containers/Success';
-import NotFound from '../../containers/NotFound';
+import Home from '@containers/Home';
+import Checkout from '@containers/Checkout';
+import Information from '@containers/Information';
+import Payment from '@containers/Payment';
+import Success from '@containers/Success';
+import NotFound from '@containers/NotFound';
 
-import '../../styles/components/App.scss';
-import Layout from '../../components/Layout';
+import '@styles/components/App.scss';
+import Layout from '@components/Layout';
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -28,15 +28,21 @@ const AppRoutes = () => {
 
 const App = () => {
   const initialState = useInitialState();
+  const isEmpty = Object.keys(initialState.state).length;
   return (
-    <AppContext.Provider value={initialState}>
-      <BrowserRouter>
-        <Layout>
-          <AppRoutes />
-        </Layout>
-      </BrowserRouter>
-    </AppContext.Provider>
-    )
+    <>
+     {isEmpty > 0 ? (
+        <AppContext.Provider value={initialState}>
+          <BrowserRouter>
+            <Layout>
+              <AppRoutes />
+            </Layout>
+          </BrowserRouter>
+        </AppContext.Provider>
+     ) : <h1>Loading...</h1>}
+     
+    </>
+  )
 };
 
 export default App;
