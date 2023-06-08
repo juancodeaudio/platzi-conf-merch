@@ -11,7 +11,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.tsx', '.js', '.jsx'],
     alias: {
       '@components': path.resolve(__dirname, 'src/components/'),
       '@containers': path.resolve(__dirname, 'src/containers/'),
@@ -59,6 +59,11 @@ module.exports = {
       {
         test: /\.(png|jpg)$/,
         type: 'asset'
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: '/node_modules/'
       }
     ],
   },
@@ -76,6 +81,9 @@ module.exports = {
     compress: true,
     historyApiFallback: true,
     port: 3005,
+    open: true,
+    hot: true,
+    liveReload: true,
   },
   optimization: {
     minimize: true,
